@@ -14,7 +14,8 @@
 - 精英保留策略
 
 ### 使用示例
-```heredity_class_sol.cpp
+#### heredity_class_sol.cpp
+```
 int main() {
 	solution sol1(100, 50, 2000, 0.1, [](vector<double> T) {
 		//		种群大小、种群规模、迭代次数、突变率、适应度函数
@@ -24,7 +25,11 @@ int main() {
 	sol1.evaluate();
 	return 0;
 }
-```heredity.cppint main() {
+```
+#### 
+heredity.cpp
+```
+int main() {
     // 参数设置
     int pop_size = 100;       // 种群大小
     int dim = 50;             // 向量维度
@@ -46,47 +51,21 @@ int main() {
 
     return 0;
 }
+```
 
-## Heredity - 遗传算法函数优化
+## Leetcode 题目集
 
 ### 项目介绍
-基于遗传算法（GA）的函数优化求解器，采用现代C++编写。
+完成的leetcode算法题部分，包括hard题目、周赛题，命名方式为 题目编号_难度.cpp  
+编程语言使用c++  需要c++17标准及以上
 
-### 主要特性
-- 多参数调优
-- 自适应变异
-- 精英保留策略
-
-### 使用示例
-```heredity_class_sol.cpp
-int main() {
-	solution sol1(100, 50, 2000, 0.1, [](vector<double> T) {
-		//		种群大小、种群规模、迭代次数、突变率、适应度函数
-		return accumulate(T.begin(), T.end(), (double)0, [](auto i, auto j) {return i + abs(j * j + j); });
-		}, -30.0, 30.0);
-		//		取值下界、取值上界
-	sol1.evaluate();
-	return 0;
-}
-```heredity.cppint main() {
-    // 参数设置
-    int pop_size = 100;       // 种群大小
-    int dim = 50;             // 向量维度
-    double lower_bound = -30; // 变量下界
-    double upper_bound = 30;  // 变量上界
-    int max_generations = 100;
-    double crossover_rate = 0.8;
-    double mutation_rate = 0.1;
-
-    // 执行遗传改进算法
-    auto [best_solution, best_fitness] = genetic_algorithm(pop_size, dim, lower_bound, upper_bound, max_generations, crossover_rate, mutation_rate);
-
-    // 输出最优解和最优适应度
-    std::cout << "Best Solution: ";
-    for (double x : best_solution) {
-        std::cout << x << " ";
-    }
-    std::cout << "\nBest Fitness: " << best_fitness << std::endl;
-
-    return 0;
-}
+#### 1579 hard  
+复杂度分析
+```
+时间复杂度：O(N⋅log(n))     空间复杂度：O(N)
+```
+#### 2503 hard  
+复杂度分析
+```
+时间复杂度：O(mnlogmn+klogk)     空间复杂度：O(mn+k)
+```
